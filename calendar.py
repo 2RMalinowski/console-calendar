@@ -7,12 +7,12 @@ need it.
 from modify import meeting_list
 import modify
 import storage
-import syss
+import sys
 import ui
 
 
 def choose_options_menu():
-    user_choice = input()
+    user_choice = input('Your choice: ')
     if user_choice == 's':
         modify.add_new_meeting_to(meeting_list)
     elif user_choice == 'c':
@@ -32,6 +32,7 @@ def handle_menu():
 
 def main():
     while True:
+        ui.display_schedule(meeting_list)
         handle_menu()
         try:
             choose_options_menu()
