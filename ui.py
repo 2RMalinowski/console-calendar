@@ -6,12 +6,15 @@ def get_input(message):
 
 #  displaying functions
 def display_schedule(meeting_list):
-    print('Your schedule for the day :')
+    print('Your schedule for the day:')
     for element in meeting_list:
         print(' '.join(element))
+    if not meeting_list:
+        print('(empty)')
 
 
 def display_program_menu(menu_commands):
+    print('Menu:')
     for option in menu_commands:
         print(f'({option[0]}) {option}')
 
