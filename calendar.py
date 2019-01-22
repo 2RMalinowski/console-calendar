@@ -4,9 +4,23 @@ example, a list of meetings), you will need to pass it to the functions that
 need it.
 """
 
-import ui
-import storage
+from modify import meeting_list
 import modify
+import storage
+import syss
+import ui
+
+
+def choose_options_menu():
+    user_choice = input()
+    if user_choice == 's':
+        modify.add_new_meeting_to(meeting_list)
+    elif user_choice == 'c':
+        modify.cancel_meeting_in(meeting_list)
+    elif user_choice == 'q':
+        sys.exit()
+    else:
+        print('No such option')  # or raise KeyError("There isn't such option")
 
 
 def handle_menu():
