@@ -4,8 +4,8 @@ meeting_list = []
 
 
 def add_new_meeting_to(meeting_list):
-    new_meeting = [ui.get_input('Enter meeting title: '),
-                   ui.get_input('Enter duration in hours (1 or 2): '),
+    new_meeting = [ui.title('Enter meeting title: '),
+                   ui.duration('Enter duration in hours (1 or 2): '),
                    ui.get_input('Enter start time: ')]
     meeting_list.append(new_meeting)
     ui.display_message('Meeting added')
