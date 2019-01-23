@@ -4,11 +4,11 @@ example, a list of meetings), you will need to pass it to the functions that
 need it.
 """
 
-import storage
+import sys
 
+import storage
 from modify import meeting_list
 import modify
-import sys
 import ui
 
 
@@ -16,8 +16,10 @@ def choose_options_menu():
     user_choice = input('Your choice: ')
     if user_choice == 's':
         modify.add_new_meeting_to(meeting_list)
+        # save
     elif user_choice == 'c':
         modify.cancel_meeting_in(meeting_list)
+        # save
     elif user_choice == 'q':
         sys.exit()
     else:
@@ -33,7 +35,7 @@ def display_menu():
 
 def main():
     while True:
-        ui.display_schedule(meeting_list)
+        # ui.display_schedule(meeting_list)
         display_menu()
         choose_options_menu()
 
