@@ -14,8 +14,11 @@ def title(message):
 
 def duration(message):
     while True:
-        duration = int(input(message))
-        if duration not in range(1, 3):
+        try:
+            duration = int(input(message))
+            if duration not in range(1, 3):
+                raise ValueError
+        except(ValueError):
             error_message = 'Please enter proper value'
             display_error_message(error_message)
         else:
@@ -26,9 +29,9 @@ def start_time(message):
     while True:
         try:
             time = int(input(message))
-            if 0 < time > 17:
+            if time not in range(0, 18):
                 raise ValueError
-        except(KeyError, ValueError):
+        except(ValueError):
             error_message = 'Please enter hour no later than 17'
             display_error_message(error_message)
         else:
@@ -55,4 +58,19 @@ def display_message(message):
 
 
 def display_error_message(message):
-    print(f'ERROR {message}')
+    # print(f'ERROR {message}')
+    print(display_colored_text(RED, (f'ERROR {message}')))
+
+
+#  coloring function
+ORANGE = '33m'
+BLUE = '34m'
+RED = '91m'
+GREEN = '92m'
+YELLOW = '93m'
+CYAN = '96m'
+
+
+def display_colored_text(color, message):
+    colored_text = (f"\033[{color}{message}\033[00m")
+    return colored_text
