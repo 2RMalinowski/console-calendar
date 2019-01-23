@@ -4,9 +4,10 @@ example, a list of meetings), you will need to pass it to the functions that
 need it.
 """
 
+import storage
+
 from modify import meeting_list
 import modify
-import storage
 import sys
 import ui
 
@@ -23,7 +24,7 @@ def choose_options_menu():
         print('No such option')  # or raise KeyError("There isn't such option")
 
 
-def handle_menu():
+def display_menu():
     menu_commands = ['schedule a new meeting',
                      'cancel an existing meeting',
                      'quit']
@@ -33,11 +34,8 @@ def handle_menu():
 def main():
     while True:
         ui.display_schedule(meeting_list)
-        handle_menu()
-        try:
-            choose_options_menu()
-        except ValueError as error:
-            ui.display_error_message(error)
+        display_menu()
+        choose_options_menu()
 
 
 if __name__ == '__main__':
