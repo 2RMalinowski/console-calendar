@@ -13,6 +13,8 @@ def add_new_meeting_to(meeting_list):
 def cancel_meeting_in(meeting_list):
     start_time = input('Enter the start time: ')
     for meeting in meeting_list:
-        if int(start_time) in meeting:
+        if int(start_time) == meeting[2]:  # '2' means start time index
             meeting_list.remove(meeting)
             ui.display_message('Meeting canceled')
+    else:
+        ui.display_error_message('There is no meeting starting at that time!')
