@@ -6,19 +6,20 @@ need it.
 
 import sys
 
+import converts_and_valids
 import storage
-from modify import meeting_list
 import modify
 import ui
+from storage import meetings
 
 
 def choose_options_menu():
     user_choice = input('Your choice: ')
     if user_choice == 's':
-        modify.add_new_meeting_to(meeting_list)
+        modify.add_new_meeting_to(meetings)
         # save
     elif user_choice == 'c':
-        modify.cancel_meeting_in(meeting_list)
+        modify.cancel_meeting_in(meetings)
         # save
     elif user_choice == 'q':
         sys.exit()
@@ -35,7 +36,7 @@ def display_menu():
 
 def main():
     while True:
-        # ui.display_schedule(meeting_list)
+        converts_and_valids.convert_duration_to_meeting_hours(meetings)
         display_menu()
         choose_options_menu()
 
