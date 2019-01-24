@@ -1,7 +1,4 @@
-
 # getting input form user functions
-
-
 def title(message):
     while True:
         meeting_title = input(message)
@@ -39,12 +36,17 @@ def start_time(message):
 
 
 #  displaying functions
-# def display_schedule(meeting_list):
-#     print('Your schedule for the day:')
-#     for element in meeting_list:
-#         print(' '.join(element))
-#     if not meeting_list:
-#         print('(empty)')
+START_TIME = 0
+END_TIME = 1
+TITLE = 2
+
+
+def display_schedule(meeting_list):
+    print('Your schedule for the day:')
+    for element in meeting_list:
+        print(f'{element[START_TIME]} - {element[END_TIME]} {element[TITLE]}')
+    if not element:
+        print('(empty)')
 
 
 def display_program_menu(menu_commands):
