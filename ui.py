@@ -38,8 +38,19 @@ def start_time(message):
             # if not converts_and_valids.check_meeting_overlpas(time):
             #     error_message = 'Meeting overlaps with existing meeting!'
             #     display_error_message(error_message)
-    else:
-        return time
+        else:
+            return time
+
+
+def start_time_of_meeting_to_remove(message):
+    while True:
+        try:
+            time = int(input(message))
+            if time not in range(8, 18):  # podczepić walidację w converts and valids
+                raise ValueError
+        except(ValueError):
+            error_message = 'Please enter hour'
+            display_error_message(error_message)
 
 
 #  displaying functions
@@ -51,7 +62,7 @@ TITLE = 2
 def display_schedule(meeting_list):
     print('Your schedule for the day:')
     for element in meeting_list:
-        print(f'{element[START_TIME]} - {element[END_TIME]} {element[TITLE]}')
+        print(f'{int(element[START_TIME]):02} - {int(element[END_TIME]):02} {element[TITLE]}')
     if not element:
         print('(empty)')
 
@@ -59,7 +70,7 @@ def display_schedule(meeting_list):
 def display_program_menu(menu_commands):
     print('Menu:')
     for option in menu_commands:
-        print(f'({option[0]}) {option}')
+        print(f'({option[0]}) {option}')  # initial letter in brackets and option name
 
 
 def display_message(message):
