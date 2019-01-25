@@ -1,3 +1,5 @@
+
+
 # getting input form user functions
 def title(message):
     while True:
@@ -56,12 +58,12 @@ def display_program_menu(menu_commands):
 
 
 def display_message(message):
-    print(message)
+    display_colored_text(ORANGE, message)
 
 
 def display_error_message(message):
-    # print(f'ERROR {message}')
-    print(display_colored_text(RED, (f'ERROR {message}')))
+    # print(f'ERROR: {message}')
+    print(display_colored_text(RED, (f'ERROR: {message}')))
 
 
 #  coloring function
