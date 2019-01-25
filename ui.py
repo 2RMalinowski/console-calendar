@@ -1,6 +1,8 @@
-
+import converts_and_valids
 
 # getting input form user functions
+
+
 def title(message):
     while True:
         meeting_title = input(message)
@@ -28,13 +30,16 @@ def start_time(message):
     while True:
         try:
             time = int(input(message))
-            if time not in range(0, 18):
+            if time not in range(8, 18):
                 raise ValueError
         except(ValueError):
-            error_message = 'Please enter hour no later than 17'
+            error_message = 'Please enter hour from 8 to 17'
             display_error_message(error_message)
-        else:
-            return time
+            # if not converts_and_valids.check_meeting_overlpas(time):
+            #     error_message = 'Meeting overlaps with existing meeting!'
+            #     display_error_message(error_message)
+    else:
+        return time
 
 
 #  displaying functions
@@ -58,7 +63,7 @@ def display_program_menu(menu_commands):
 
 
 def display_message(message):
-    display_colored_text(ORANGE, message)
+    print(display_colored_text(ORANGE, message))
 
 
 def display_error_message(message):

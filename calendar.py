@@ -24,7 +24,7 @@ def choose_options_menu():
     elif user_choice == 'q':
         sys.exit()
     else:
-        print('No such option')  # or raise KeyError("There isn't such option")
+        ui.display_message("There isn't such option")
 
 
 def display_menu():

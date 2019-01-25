@@ -10,7 +10,7 @@ def add_new_meeting_to(meeting_list):
         meeting_list.append(new_meeting)
         ui.display_message('Meeting added')
     else:
-        ui.display_error_message('Meeting outside day')
+        ui.display_error_message('Meeting is outside of your working hours (8 to 18)!')
 
 
 def cancel_meeting_in(meeting_list):
