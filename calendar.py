@@ -36,7 +36,7 @@ def display_menu():
 
 def main():
     while True:
-        converts_and_valids.convert_duration_to_meeting_hours(meetings)
+        ui.display_schedule(converts_and_valids.convert_duration_to_meeting_hours(meetings))
         display_menu()
         choose_options_menu()
 
