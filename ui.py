@@ -35,9 +35,6 @@ def start_time(message):
         except(ValueError):
             error_message = 'Please enter hour from 8 to 17'
             display_error_message(error_message)
-            # if not converts_and_valids.check_meeting_overlpas(time):
-            #     error_message = 'Meeting overlaps with existing meeting!'
-            #     display_error_message(error_message)
         else:
             return time
 
@@ -73,22 +70,21 @@ def display_program_menu(menu_commands):
         print(f'({option[0]}) {option}')  # initial letter in brackets and option name
 
 
-def display_message(message):
-    print(display_colored_text(ORANGE, message))
+def display_message(color, message):
+    print(display_colored_text(color, message))
 
 
 def display_error_message(message):
-    # print(f'ERROR: {message}')
-    print(display_colored_text(RED, (f'ERROR: {message}')))
+    print(display_colored_text(ORANGE, (f'ERROR: {message}')))
 
 
 #  coloring function
-ORANGE = '33m'
 BLUE = '34m'
-RED = '91m'
-GREEN = '92m'
-YELLOW = '93m'
 CYAN = '96m'
+GREEN = '92m'
+ORANGE = '33m'
+RED = '91m'
+YELLOW = '93m'
 
 
 def display_colored_text(color, message):
