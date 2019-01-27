@@ -1,6 +1,6 @@
 import ui
 import converts_and_valids
-CONF_COLOR = ui.GREEN
+CONFIRM_COLOR = ui.GREEN
 
 
 def add_new_meeting_to(meeting_list):
@@ -13,7 +13,7 @@ def add_new_meeting_to(meeting_list):
             if converts_and_valids.check_meeting_overlpas(start_time, end_time, meeting_list):
                 new_meeting = (start_time, end_time, title)
                 meeting_list.append(new_meeting)
-                ui.display_message(CONF_COLOR, 'Meeting added')
+                ui.display_message(CONFIRM_COLOR, 'Meeting added')
                 break
             else:
                 ui.display_error_message('Meeting overlaps with existing meeting!')
@@ -22,10 +22,13 @@ def add_new_meeting_to(meeting_list):
 
 
 def cancel_meeting_in(meeting_list):
-    start_time = ui.start_time_of_meeting_to_remove('Enter the start time: ')
-    for meeting in meeting_list:
-        if int(start_time) == meeting[2]:  # '2' means start time hour index
-            meeting_list.remove(meeting)
-            ui.display_message(CONF_COLOR, 'Meeting canceled')
-        else:
-            ui.display_error_message('There is no meeting starting at that time!')
+    while True:
+        start_time = ui.start_time('Enter the start time: ')
+        for meeting in meeting_list:
+            if int(start_time) == meeting[0]:
+                # if converts_and_valids.check_meeting_to_cancel:
+                meeting_list.remove(meeting)
+                ui.display_message(CONFIRM_COLOR, 'Meeting canceled')
+                break
+            else:
+                ui.display_error_message('There is no meeting starting at that time!')

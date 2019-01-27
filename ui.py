@@ -39,17 +39,6 @@ def start_time(message):
             return time
 
 
-def start_time_of_meeting_to_remove(message):
-    while True:
-        try:
-            time = int(input(message))
-            if time not in range(8, 18):  # podczepić walidację w converts and valids
-                raise ValueError
-        except(ValueError):
-            error_message = 'Please enter hour'
-            display_error_message(error_message)
-
-
 #  displaying functions
 START_TIME = 0
 END_TIME = 1

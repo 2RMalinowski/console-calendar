@@ -5,6 +5,7 @@ __pycache__/
 
 # Local files
 requirements.txt
+meetings.txt
 
 # C extensions
 *.so

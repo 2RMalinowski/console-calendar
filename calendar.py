@@ -10,7 +10,7 @@ import converts_and_valids
 import storage
 import modify
 import ui
-meetings = storage.meetings
+meetings = storage.import_data_from('meetings.txt')
 
 
 def choose_options_menu():
