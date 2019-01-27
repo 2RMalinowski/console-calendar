@@ -10,7 +10,7 @@ import converts_and_valids
 import storage
 import modify
 import ui
-from storage import meetings
+meetings = storage.meetings
 
 
 def choose_options_menu():
@@ -36,7 +36,7 @@ def display_menu():
 
 def main():
     while True:
-        ui.display_schedule(converts_and_valids.convert_duration_to_meeting_hours(meetings))
+        ui.display_schedule(meetings)
         display_menu()
         choose_options_menu()
 

@@ -1,1 +1,1 @@
-meetings = [('Lunch', 2, 12), ('Meeting', 1, 15), ('Swimming', 2, 16)]
+meetings = [(12, 14,  'Lunch'), (15, 16, 'Meeting'), (16, 17, 'Swimming')]

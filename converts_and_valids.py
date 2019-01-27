@@ -1,25 +1,15 @@
 import ui
-from storage import meetings
+import storage
+meetings = storage.meetings
 
-TITLE = 0
+TITLE = 2
 DURATION = 1
-START_TIME = 2
+START_TIME = 0
 HOUR_BEFORE_END = 17
 
 
-def convert_duration_to_meeting_hours(meeting_list):
-    interval_and_title_list = []
-    for element in meeting_list:
-        end_meeting_hour = element[START_TIME] + element[DURATION]
-        interval_and_title_list.append((element[START_TIME], end_meeting_hour, element[TITLE]))
-    # ui.display_schedule(interval_and_title_list)
-    return interval_and_title_list
-
-
-def check_meeting_in_working_hours(meeting):
-    meeting_start_time = meeting[START_TIME]
-    meeting_duration = meeting[DURATION]
-    if meeting_start_time + meeting_duration > 18:
+def check_meeting_in_working_hours(duration, start_time):
+    if start_time + duration > 18:
         return False
     else:
         return True
