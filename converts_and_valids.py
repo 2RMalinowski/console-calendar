@@ -5,7 +5,6 @@ meetings = storage.import_data_from('meetings.txt')
 START_TIME = 0
 END_TIME = 1
 TITLE = 2
-HOUR_BEFORE_END = 17
 
 
 def check_meeting_in_working_hours(duration, start_time):

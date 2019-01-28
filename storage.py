@@ -1,4 +1,4 @@
-import modify
+# import modify
 
 
 def import_data_from(source_file='meetings.txt'):
@@ -11,4 +11,7 @@ def import_data_from(source_file='meetings.txt'):
 
 def export_data_to(data_source, dest_file='meetings.txt'):
     with open(dest_file, 'a') as destfile:
-        destfile.write(''.join(modify.add_new_meeting_to(meeting_list)))
+        print(data_source)
+        for meeting in data_source:
+            # destfile.write(','.join(meeting))
+            print(','.join(meeting))

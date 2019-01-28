@@ -17,10 +17,10 @@ def choose_options_menu():
     user_choice = input('Your choice: ')
     if user_choice == 's':
         modify.add_new_meeting_to(meetings)
-        # save
+        # storage.export_data_to(meetings, 'meetings.txt')
     elif user_choice == 'c':
         modify.cancel_meeting_in(meetings)
-        # save
+        # storage.export_data_to(meetings, 'meetings.txt')
     elif user_choice == 'q':
         sys.exit()
     else:
