@@ -25,7 +25,7 @@ def cancel_meeting_in(meeting_list):
     while True:
         start_time = ui.start_time('Enter the start time: ')
         for meeting in meeting_list:
-            if int(start_time) == meeting[0]:
+            if int(start_time) == int(meeting[0]):
                 # if converts_and_valids.check_meeting_to_cancel:
                 meeting_list.remove(meeting)
                 ui.display_message(CONFIRM_COLOR, 'Meeting canceled')
