@@ -1,6 +1,8 @@
 import ui
 import converts_and_valids
+
 CONFIRM_COLOR = ui.GREEN
+START_TIME = 0
 
 
 def add_new_meeting_to(meeting_list):
@@ -25,10 +27,13 @@ def cancel_meeting_in(meeting_list):
     while True:
         start_time = ui.start_time('Enter the start time: ')
         for meeting in meeting_list:
-            if int(start_time) == int(meeting[0]):
-                # if converts_and_valids.check_meeting_to_cancel:
+            if start_time == meeting[START_TIME]:
                 meeting_list.remove(meeting)
                 ui.display_message(CONFIRM_COLOR, 'Meeting canceled')
                 break
             else:
                 ui.display_error_message('There is no meeting starting at that time!')
+
+
+# def edit_meeting_in(meetings):
+#     pass

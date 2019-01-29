@@ -1,8 +1,7 @@
 import converts_and_valids
 
+
 # getting input form user functions
-
-
 def title(message):
     while True:
         meeting_title = input(message)
@@ -59,6 +58,10 @@ def display_program_menu(menu_commands):
         print(f'({option[0]}) {option}')  # initial letter in brackets and option name
 
 
+def display_command_result(message):
+    print(message)
+
+
 def display_message(color, message):
     print(display_colored_text(color, message))
 
@@ -73,6 +76,7 @@ CYAN = '96m'
 GREEN = '92m'
 ORANGE = '33m'
 RED = '91m'
+# WHITE = '37m'
 YELLOW = '93m'
 
 
