@@ -35,9 +35,9 @@ def convert_to_list_of_strigs_from(mixed_list):
 
 
 def export_data_to(data_source, dest_file='meetings.txt'):
-    meeting_parameters_list = []
-    for element in data_source:
-        meeting_parameters_list.append(str(element))
-    with open(dest_file, 'a+') as destfile:
-        destfile.write(','.join(meeting_parameters_list) + '\n')
+    list_of_meetings_str = convert_to_list_of_strigs_from(data_source)
+    with open(dest_file, 'w') as destfile:
+        for meeting in list_of_meetings_str:
+            destfile.write(','.join(meeting) + '\n')
+            print(','.join(meeting))
         ui.display_message(CONFIRM_COLOR, 'Meeting added')
