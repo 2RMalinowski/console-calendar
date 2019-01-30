@@ -1,5 +1,6 @@
 import ui
 import converts_and_valids
+import storage
 
 CONFIRM_COLOR = ui.GREEN
 START_TIME = 0
@@ -15,7 +16,7 @@ def add_new_meeting_to(meeting_list):
             if converts_and_valids.check_meeting_overlpas(start_time, end_time, meeting_list):
                 new_meeting = (start_time, end_time, title)
                 meeting_list.append(new_meeting)
-                ui.display_message(CONFIRM_COLOR, 'Meeting added')
+                storage.export_data_to(new_meeting, 'meetings.txt')
                 break
             else:
                 ui.display_error_message('Meeting overlaps with existing meeting!')

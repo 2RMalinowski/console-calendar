@@ -76,7 +76,6 @@ CYAN = '96m'
 GREEN = '92m'
 ORANGE = '33m'
 RED = '91m'
-# WHITE = '37m'
 YELLOW = '93m'
 
 

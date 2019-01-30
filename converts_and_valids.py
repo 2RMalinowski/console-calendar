@@ -30,7 +30,7 @@ def check_meeting_overlpas(start_time, end_time, meeting_list):
 #                     return False
 
 
-def count_total_meetings_duration_in(meetings):
+def count_total_meetings_duration_in(meeting_list):
     meeting_duration_list = [meeting[END_TIME] - meeting[START_TIME] for meeting in meetings]
     ui.display_command_result(sum(meeting_duration_list))
 
