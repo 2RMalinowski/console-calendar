@@ -6,6 +6,8 @@ import modify
 import ui
 meetings = storage.convert_to_tuples_of_ints()
 
+MESSAGE_COLOR = ui.ORANGE
+
 
 def choose_options_menu():
     user_choice = input('Your choice: ')
@@ -24,7 +26,7 @@ def choose_options_menu():
     elif user_choice == 'q':
         sys.exit()
     else:
-        ui.display_message(ui.ORANGE, "There isn't such option")
+        ui.display_message(MESSAGE_COLOR, "There isn't such option")
 
 
 def display_menu():
@@ -39,7 +41,7 @@ def display_menu():
 
 def main():
     while True:
-        ui.display_schedule(meetings)
+        ui.display_schedule(sorted(meetings))
         display_menu()
         choose_options_menu()
 
