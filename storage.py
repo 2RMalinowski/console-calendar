@@ -1,4 +1,5 @@
 import ui
+
 CONFIRM_COLOR = ui.GREEN
 
 
@@ -10,10 +11,9 @@ def import_data_from(source_file='meetings.txt'):
     return list_of_meetings_str
 
 
-def convert_to_tuples_of_ints():
+def convert_to_tuples_of_ints(strings_list):
     list_of_meetings_int = []
-    meeting_list = import_data_from('meetings.txt')
-    for meeting in meeting_list:
+    for meeting in strings_list:
         meeting_parameters_list = []
         for element in meeting:
             try:

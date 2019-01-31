@@ -4,9 +4,9 @@ import converts_and_valids
 import storage
 import modify
 import ui
-meetings = storage.convert_to_tuples_of_ints()
+meetings = storage.convert_to_tuples_of_ints(storage.import_data_from(source_file='meetings.txt'))
 
-MESSAGE_COLOR = ui.ORANGE
+CONFIRM_COLOR = ui.GREEN
 
 
 def choose_options_menu():
@@ -26,7 +26,7 @@ def choose_options_menu():
     elif user_choice == 'q':
         sys.exit()
     else:
-        ui.display_message(MESSAGE_COLOR, "There isn't such option")
+        ui.display_message(ui.ORANGE, "There isn't such option")
 
 
 def display_menu():
@@ -40,6 +40,7 @@ def display_menu():
 
 
 def main():
+    # meetings = storage.convert_to_tuples_of_ints(import_data_from(source_file='meetings.txt'))
     while True:
         ui.display_schedule(sorted(meetings))
         display_menu()

@@ -2,8 +2,8 @@ import ui
 import converts_and_valids
 import storage
 
-CONFIRM_COLOR = ui.GREEN
 START_TIME = 0
+CONFIRM_COLOR = ui.GREEN
 
 
 def add_new_meeting_to(meeting_list):
@@ -16,8 +16,7 @@ def add_new_meeting_to(meeting_list):
             if converts_and_valids.check_meeting_overlpas(start_time, end_time, meeting_list):
                 new_meeting = (start_time, end_time, title)
                 meeting_list.append(new_meeting)
-                meeting_list_sorted = sorted(meeting_list)
-                storage.export_data_to(meeting_list_sorted, 'meetings.txt')
+                storage.export_data_to(meeting_list, 'meetings.txt')
                 break
             else:
                 ui.display_error_message('Meeting overlaps with existing meeting!')
@@ -37,5 +36,5 @@ def cancel_meeting_in(meeting_list):
                 ui.display_error_message('There is no meeting starting at that time!')
 
 
-# def edit_meeting_in(meetings):
+# def edit_meeting_in(meeting_list):
 #     pass
