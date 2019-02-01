@@ -1,6 +1,6 @@
 import ui
 import storage
-meetings = storage.convert_to_tuples_of_ints(storage.import_data_from(source_file='meetings.txt'))
+
 
 START_TIME = 0
 END_TIME = 1

@@ -4,13 +4,12 @@ import operations
 import storage
 import modify
 import ui
-meetings = storage.convert_to_tuples_of_ints(storage.import_data_from(source_file='meetings.txt'))
 
 
 CONFIRM_COLOR = ui.GREEN
 
 
-def choose_options_menu():
+def choose_options_menu(meetings):
     user_choice = input('Your choice: ')
     if user_choice == 's':
         modify.add_new_meeting_to(meetings)
@@ -41,11 +40,11 @@ def display_menu():
 
 
 def main():
-    # meetings = storage.import_data_from('meetings.txt')
+    meetings = storage.load_meetings('meetings.txt')
     while True:
         ui.display_schedule(sorted(meetings))
         display_menu()
-        choose_options_menu()
+        choose_options_menu(meetings)
 
 
 if __name__ == '__main__':

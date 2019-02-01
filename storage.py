@@ -24,9 +24,8 @@ def convert_to_tuples_of_ints(strings_list):
     return list_of_meetings_int
 
 
-# def load_meetings(source_file='meetings.txt'):
-#     import_data_from(source_file)
-#     convert_to_tuples_of_ints(import_data_from(source_file))
+def load_meetings(source_file='meetings.txt'):
+    return convert_to_tuples_of_ints(import_data_from(source_file))
 
 
 def convert_to_list_of_strigs_from(mixed_list):
