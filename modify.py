@@ -34,6 +34,7 @@ def cancel_meeting_in(meeting_list):
                 break
             else:
                 ui.display_error_message('There is no meeting starting at that time!')
+        return
 
 
 # def edit_meeting_in(meeting_list):

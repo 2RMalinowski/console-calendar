@@ -31,7 +31,7 @@ def check_meeting_overlpas(start_time, end_time, meeting_list):
 
 
 def count_total_meetings_duration_in(meeting_list):
-    meeting_duration_list = [meeting[END_TIME] - meeting[START_TIME] for meeting in meetings]
+    meeting_duration_list = [meeting[END_TIME] - meeting[START_TIME] for meeting in meeting_list]
     ui.display_message(MESSAGE_COLOR, f'Total meeting duration: {sum(meeting_duration_list)}')
 
 # def compact(meetings):
