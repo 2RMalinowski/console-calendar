@@ -3,7 +3,7 @@ import ui
 CONFIRM_COLOR = ui.GREEN
 
 
-def import_data_from(source_file='meetings.txt'):
+def import_data_from(source_file):
     list_of_meetings_str = []
     with open(source_file, 'r') as datafile:
         for line in datafile.readlines():
@@ -22,6 +22,11 @@ def convert_to_tuples_of_ints(strings_list):
                 meeting_parameters_list.append(element)
         list_of_meetings_int.append(tuple(meeting_parameters_list))
     return list_of_meetings_int
+
+
+# def load_meetings(source_file='meetings.txt'):
+#     import_data_from(source_file)
+#     convert_to_tuples_of_ints(import_data_from(source_file))
 
 
 def convert_to_list_of_strigs_from(mixed_list):

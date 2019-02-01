@@ -1,5 +1,5 @@
 import ui
-import converts_and_valids
+import operations
 import storage
 
 START_TIME = 0
@@ -11,9 +11,9 @@ def add_new_meeting_to(meeting_list):
     duration = ui.duration('Enter duration in hours (1 or 2): ')
     while True:
         start_time = ui.start_time('Enter start time: ')
-        if converts_and_valids.check_meeting_in_working_hours(duration, start_time):
+        if operations.check_meeting_in_working_hours(duration, start_time):
             end_time = start_time + duration
-            if converts_and_valids.check_meeting_overlpas(start_time, end_time, meeting_list):
+            if operations.check_meeting_overlpas(start_time, end_time, meeting_list):
                 new_meeting = (start_time, end_time, title)
                 meeting_list.append(new_meeting)
                 storage.export_data_to(meeting_list, 'meetings.txt')

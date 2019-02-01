@@ -1,10 +1,11 @@
 import sys
 
-import converts_and_valids
+import operations
 import storage
 import modify
 import ui
 meetings = storage.convert_to_tuples_of_ints(storage.import_data_from(source_file='meetings.txt'))
+
 
 CONFIRM_COLOR = ui.GREEN
 
@@ -20,9 +21,9 @@ def choose_options_menu():
         modify.edit_meeting_in(meetings)
         # storage.export_data_to(meetings, 'meetings.txt')
     elif user_choice == 't':
-        converts_and_valids.count_total_meetings_duration_in(meetings)
+        operations.count_total_meetings_duration_in(meetings)
     elif user_choice == 'm':
-        converts_and_valids.compact(meetings)
+        operations.compact(meetings)
     elif user_choice == 'q':
         sys.exit()
     else:
@@ -40,7 +41,7 @@ def display_menu():
 
 
 def main():
-    # meetings = storage.convert_to_tuples_of_ints(import_data_from(source_file='meetings.txt'))
+    # meetings = storage.import_data_from('meetings.txt')
     while True:
         ui.display_schedule(sorted(meetings))
         display_menu()
